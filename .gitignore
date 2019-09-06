@@ -1,0 +1,6 @@
+*.list
+systemd/
+dconf/
+libfm/
+pulse/
+Postman/
