@@ -103,6 +103,7 @@ source $ZSH/oh-my-zsh.sh
 export LANG="en_GB.UTF-8"
 export TERMINAL="/usr/bin/kitty"
 export EDITOR="/usr/bin/vim"
+export SHELL="/usr/bin/zsh"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 

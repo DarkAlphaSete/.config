@@ -11,7 +11,7 @@ me to just `git clone` onto my home directory and basically call it a day.
 # Programs
 `i3-gaps`, `polybar`, `compton`, `kitty`, `zsh` (with `oh-my-zsh`), `rofi`, `pcmanfm`, `ncmpcpp`, `mpd` and `neofetch`.
 
-Also, `blender`.
+Also, `blender` and `krita`.
 
 # Credits
 ...go to the example files. No other files were used here; I just edited the default ones.

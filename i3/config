@@ -16,6 +16,11 @@ font pango:DejaVu Sans Mono 10
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
+
+# Wallpaper stuff
+exec --no-startup-id feh --no-fehbg --bg-max $HOME/wallpaper
+
+
 # Lock the screen manually
 bindsym $mod+Shift+k exec i3lock
 
@@ -200,7 +205,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Make specific windows float by default
-for_window [title="Blender User Preferences"] floating enable
+for_window [title="Blender Preferences"] floating enable
 for_window [class="feh"] floating enable
 
 #####

@@ -31,7 +31,7 @@ ncmpcpp_directory = "~/.config/ncmpcpp"
 #
 ## Needed for tag editor and file operations to work.
 ##
-#mpd_music_dir = ~/music
+mpd_music_dir = ~/Music
 #
 mpd_crossfade_time = 7
 #
@@ -81,7 +81,7 @@ visualizer_in_stereo = yes
 #
 ## Available values: spectrum, wave, wave_filled, ellipse.
 ##
-visualizer_type = ellipse
+visualizer_type = wave_filled
 #
 #visualizer_look = ●▮
 #
