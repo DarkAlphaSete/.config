@@ -72,7 +72,7 @@ bindsym $mod+Shift+q kill
 
 # Rofi
 bindsym $mod+d exec "rofi -show run"
-bindsym $mod+Shift+d exec "rofi -show window"
+bindsym $mod+Tab exec "rofi -show window"
 
 # Change focus
 #bindsym $mod+$left focus left
