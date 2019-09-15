@@ -20,7 +20,6 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # Wallpaper stuff
 exec --no-startup-id feh --no-fehbg --bg-max $HOME/wallpaper
 
-
 # Lock the screen manually
 bindsym $mod+Shift+k exec i3lock
 
@@ -38,6 +37,9 @@ bindsym $mod+Shift+l exec "killall -q compton"
 # Polybar
 # $HOME/.config is used instead of $XDG_CONFIG_HOME because it doesn't work here for some reason??
 exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
+
+# Take a screenshot of the selected area using scrot
+#bindsym $mod+p exec --no-startup-id $XDG_CONFIG_HOME/screenshot.sh why_did_I_have_to_write_a_script_for_this
 
 
 # Use pactl to adjust volume in PulseAudio.

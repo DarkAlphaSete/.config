@@ -17,12 +17,63 @@ ArtColorSel.lumaGamma=2.2
 ArtColorSel.lumaR=0.2126
 ArtColorSel.showBgColor=true
 ArtColorSel.showValueScale=false
+BackgroundColorForNewImage=255,255,255
+BackgroundOpacityForNewImage=255
+BackgroundStyleForNewImage=0
 CanvasOnlyActive=false
 GamutMasks.viewMode=0
+Krita/Ocio/DisplayDevice=sRGB
+Krita/Ocio/DisplayLook=None
+Krita/Ocio/DisplayView=Raw
+Krita/Ocio/InputColorSpace=raw
+Krita/Ocio/OcioColorManagementMode=0
+Krita/Ocio/OcioConfigPath=
+Krita/Ocio/OcioLockColorVisualRepresentation=false
+Krita/Ocio/OcioLutPath=
+Krita/Ocio/UseOcio=false
+LastBackGroundColor=<!DOCTYPE LastBackGroundColor>\n<LastBackGroundColor>\n <RGB g="0" r="0" b="0" space="sRGB-elle-V2-srgbtrc.icc"/>\n</LastBackGroundColor>\n
+LastForeGroundColor=<!DOCTYPE LastForeGroundColor>\n<LastForeGroundColor>\n <RGB g="0" r="0" b="0" space="sRGB-elle-V2-srgbtrc.icc"/>\n</LastForeGroundColor>\n
+LastPreset=b)_Basic-5_Size
+LineSmoothingDelayDistance=50
+LineSmoothingDistance=50
+LineSmoothingFinishStabilizedCurve=true
+LineSmoothingScalableDistance=true
+LineSmoothingSmoothPressure=false
+LineSmoothingStabilizeSensors=true
+LineSmoothingTailAggressiveness=0.15
+LineSmoothingType=1
+LineSmoothingUseDelayDistance=true
+NumberOfLayersForNewImage=2
 SpecificColorSelector/UsePercentage=false
 baseLength=60
+canvasState=OPENGL_SUCCESS
+colorDepthDef=U8
+colorModelDef=RGBA
+colorProfileDef=sRGB-elle-V2-srgbtrc.icc
 defaultPalette=Default
+globalSnapBoundingBox=false
+globalSnapExtension=false
+globalSnapImageBounds=true
+globalSnapImageCenter=true
+globalSnapIntersection=false
+globalSnapNode=false
+globalSnapOrthogonal=false
+globalSnapToPixel=false
+gridmaincolor=99,99,99
+gridmainstyle=0
+gridsubdivisioncolor=150,150,150
+gridsubdivisionstyle=1
+guidesColor=99,99,99
+guidesLineStyle=0
+imageHeightDef=768
+imageResolutionDef=100
+imageWidthDef=1280
+internal_selector_active_color_set=Concept-cookie
+levelOfDetailEnabled=false
 logviewer_enabled=false
+moveToolChangedValueX=63
+moveToolChangedValueY=40
+moveToolUnit=0
 numberOfOnionSkins=10
 oninSkinTintColorForward=0,255,0
 onionSkinOpacity_-1=173
@@ -69,11 +120,24 @@ onionSkinState_8=false
 onionSkinState_9=false
 onionSkinTintColorBackward=255,0,0
 onionSkinTintFactor=191
+presethistory=
 scratchpadVisible=true
 showAdditionalOnionSkinsSettings=true
 toolbarslider_1=opacity
 toolbarslider_2=size
 toolbarslider_3=flow
+
+[KisToolPolyline]
+outlineType=1
+
+[KisToolSelectRectangular]
+roundCornersX=0
+roundCornersY=0
+
+[KritaShape/KisToolRectangle]
+outlineType=1
+roundCornersX=0
+roundCornersY=0
 
 [MainWindow]
 Height 768=741
@@ -270,6 +334,15 @@ width=640
 xPosition=0
 yPosition=19
 
+[MainWindow][DockWidget SmallColorSelector]
+Collapsed=false
+DockArea=2
+Locked=false
+height=461
+width=640
+xPosition=0
+yPosition=19
+
 [MainWindow][DockWidget SpecificColorSelector]
 Collapsed=false
 DockArea=2
@@ -339,6 +412,9 @@ maxRecentFileItems=100
 [SvgSymbolCollection]
 currentCollection=0
 
+[SvgTextTool]
+windowState=AAAA/wAAAAD9AAAAAAAAAicAAAFSAAAABAAAAAQAAAAIAAAACPwAAAADAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAYAGYAbwBuAHQAUwBlAHQAdABpAG4AZwBzAQAAAAD/////AAAAAAAAAAAAAAACAAAAAQAAABQAZgBvAHIAbQBhAHQAdABpAG4AZwEAAAAA/////wAAAAAAAAAA
+
 [advancedColorSelector]
 gamma=2.2
 lumaG=0.7152
@@ -350,3 +426,6 @@ DockerPluginsDisabled=
 FlakePluginsDisabled=
 ShapePluginsDisabled=
 ToolPlugins=,,,
+
+[crashprevention]
+CreatingCanvas=false
