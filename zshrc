@@ -104,6 +104,7 @@ export LANG="en_GB.UTF-8"
 export TERMINAL="/usr/bin/kitty"
 export EDITOR="/usr/bin/vim"
 export SHELL="/usr/bin/zsh"
+export PHONE_SDCARD="/storage/5890-DE1C/"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
