@@ -106,6 +106,8 @@ export EDITOR="/usr/bin/vim"
 export SHELL="/usr/bin/zsh"
 export PHONE_SDCARD="/storage/5890-DE1C/"
 
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk/"
+
 export XDG_CONFIG_HOME="$HOME/.config"
 
 alias krita="primusrun /usr/bin/krita"
