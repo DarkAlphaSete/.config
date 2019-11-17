@@ -30,9 +30,9 @@ exec --no-startup-id nm-applet
 # Compton
 # For some reason its pretty buggy when restarting i3 so I'm killing it every time
 # Poor thing...
-exec_always --no-startup-id "killall -q compton ; compton"
-bindsym $mod+l exec "killall -q compton ; compton"
-bindsym $mod+Shift+l exec "killall -q compton"
+exec_always --no-startup-id "killall -q picom ; picom"
+bindsym $mod+l exec "killall -q picom ; picom"
+bindsym $mod+Shift+l exec "killall -q picom"
 
 # Polybar
 # $HOME/.config is used instead of $XDG_CONFIG_HOME because it doesn't work here for some reason??
