@@ -132,8 +132,8 @@
          id="rect"
          style="fill:blue;"
          usecurrent="1"
-         width="177.787"
-         height="88.8934"
+         width="33.3504"
+         height="109.899"
          rx="0"
          ry="0" />
       <eventcontext
@@ -340,8 +340,8 @@
        selcue="1"
        align_mode="1">
       <group
-         id="lineheight"
-         display_unit="0" />
+         display_unit="0"
+         id="lineheight" />
     </eventcontext>
     <eventcontext
        id="nodes"
@@ -359,8 +359,8 @@
        live_outline="1"
        live_objects="1"
        show_helperpath="0"
-       x="1200.33"
-       y="960.974"
+       x="396.85"
+       y="499.121"
        edit_clipping_paths="0"
        edit_masks="0" />
     <eventcontext
@@ -408,7 +408,8 @@
        selcue="1"
        gradientdrag="1"
        pick="1"
-       setalpha="1" />
+       setalpha="1"
+       onetimepick="0" />
     <eventcontext
        id="select"
        selcue="1"
@@ -427,12 +428,14 @@
        offset="0"
        offsetunits="cm" />
     <group
-       id="measure"
-       fontsize="10"
-       precision="2"
-       scale="100"
+       unit="mm"
        offset="5"
-       unit="mm" />
+       scale="100"
+       precision="2"
+       fontsize="10"
+       id="measure"
+       measure-start="-6.25,-3.77953e-05"
+       measure-end="-6.25,12.5" />
   </group>
   <group
      id="palette">
@@ -553,7 +556,7 @@
   </group>
   <group
      id="colorselector"
-     page="0" />
+     page="1" />
   <group
      id="embedded">
     <group
@@ -576,14 +579,14 @@
        panel_mode="1"
        panel_wrap="0"
        panel_border="0"
-       page="2"
+       page="0"
        x="0"
        y="0"
        w="333"
        h="395"
        visible="1"
        state="2"
-       placement="1" />
+       placement="5" />
     <group
        id="filtereffects" />
     <group
@@ -601,11 +604,12 @@
        align-to="0"
        x="0"
        y="0"
-       w="328"
-       h="391"
+       w="333"
+       h="395"
        visible="1"
-       state="3"
-       placement="1" />
+       state="2"
+       placement="5"
+       sel-as-groups="0" />
     <group
        id="xml" />
     <group
@@ -624,8 +628,8 @@
        panel_mode="1"
        panel_wrap="0"
        panel_border="0"
-       x="683"
-       y="384"
+       x="1009"
+       y="84"
        w="830"
        h="624"
        visible="0"
@@ -641,11 +645,25 @@
        id="export"
        default=""
        append_extension="1"
-       path="">
+       path=""
+       panel_size="1"
+       panel_ratio="100"
+       panel_mode="1"
+       panel_wrap="0"
+       panel_border="0"
+       x="0"
+       y="0"
+       w="367"
+       h="445"
+       visible="1"
+       state="3"
+       placement="1">
       <group
-         id="exportarea" />
+         id="exportarea"
+         value="drawing" />
       <group
-         id="defaultxdpi" />
+         id="defaultxdpi"
+         value="1000" />
     </group>
     <group
        id="save_as"
@@ -703,8 +721,8 @@
        panel_border="0"
        x="0"
        y="0"
-       w="328"
-       h="391"
+       w="1"
+       h="1"
        visible="1"
        state="3"
        placement="1" />
@@ -1016,7 +1034,7 @@
      id="extensions" />
   <group
      id="desktop"
-     style="line-height:1.25;fill:#ff8080;fill-opacity:0.66310161;text-anchor:middle;text-align:center;font-size:48px;stroke-linejoin:round;stroke-linecap:round;paint-order:stroke markers fill;stroke-width:2.83464567;stroke-miterlimit:4;stroke-dasharray:none">
+     style="line-height:1.25;fill:#f08f5a;fill-opacity:1;text-anchor:middle;text-align:center;font-size:48px;stroke-linejoin:round;stroke-linecap:round;paint-order:stroke markers fill;stroke-width:0.15;stroke-miterlimit:4;stroke-dasharray:none;stroke:none;stroke-opacity:1">
     <group
        width="1366"
        height="741"

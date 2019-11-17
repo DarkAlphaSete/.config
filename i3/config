@@ -209,6 +209,8 @@ bindsym $mod+r mode "resize"
 # Make specific windows float by default
 for_window [title="Blender Preferences"] floating enable
 for_window [class="feh"] floating enable
+for_window [class="Palitos"] floating enable
+
 
 #####
 ## Gaps configuration
