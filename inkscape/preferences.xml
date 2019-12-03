@@ -340,8 +340,8 @@
        selcue="1"
        align_mode="1">
       <group
-         display_unit="0"
-         id="lineheight" />
+         id="lineheight"
+         display_unit="0" />
     </eventcontext>
     <eventcontext
        id="nodes"
@@ -359,8 +359,8 @@
        live_outline="1"
        live_objects="1"
        show_helperpath="0"
-       x="396.85"
-       y="499.121"
+       x="0"
+       y="0"
        edit_clipping_paths="0"
        edit_masks="0" />
     <eventcontext
@@ -428,14 +428,14 @@
        offset="0"
        offsetunits="cm" />
     <group
-       unit="mm"
-       offset="5"
-       scale="100"
-       precision="2"
-       fontsize="10"
-       id="measure"
+       measure-end="-6.25,12.5"
        measure-start="-6.25,-3.77953e-05"
-       measure-end="-6.25,12.5" />
+       id="measure"
+       fontsize="10"
+       precision="2"
+       scale="100"
+       offset="5"
+       unit="mm" />
   </group>
   <group
      id="palette">
@@ -583,7 +583,7 @@
        x="0"
        y="0"
        w="333"
-       h="395"
+       h="488"
        visible="1"
        state="2"
        placement="5" />
@@ -605,7 +605,7 @@
        x="0"
        y="0"
        w="333"
-       h="395"
+       h="488"
        visible="1"
        state="2"
        placement="5"
@@ -653,14 +653,14 @@
        panel_border="0"
        x="0"
        y="0"
-       w="367"
-       h="445"
+       w="1"
+       h="1"
        visible="1"
        state="3"
        placement="1">
       <group
          id="exportarea"
-         value="drawing" />
+         value="page" />
       <group
          id="defaultxdpi"
          value="1000" />
@@ -1036,10 +1036,10 @@
      id="desktop"
      style="line-height:1.25;fill:#f08f5a;fill-opacity:1;text-anchor:middle;text-align:center;font-size:48px;stroke-linejoin:round;stroke-linecap:round;paint-order:stroke markers fill;stroke-width:0.15;stroke-miterlimit:4;stroke-dasharray:none;stroke:none;stroke-opacity:1">
     <group
-       width="1366"
-       height="741"
-       x="0"
-       y="27"
+       width="680"
+       height="737"
+       x="684"
+       y="29"
        fullscreen="0"
        id="geometry"
        maximized="0" />
