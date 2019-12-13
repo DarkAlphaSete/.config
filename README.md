@@ -3,10 +3,14 @@ Looks nice, but isn't mindblowing or anything.
 
 All these files go inside a `.config` folder, located at the home directory (`$HOME`).
 
-The files `.zshrc` and `.xinitrc` are in this `.config` folder, because symlinked them from the `$HOME` directory.
+The files `.zshrc` and `.xinitrc` are in this `.config` folder because I symlinked them from the `$HOME` directory,
+allowing me to keep everything tidy and in a single place. The `symlinks.sh` is a small script I wrote to automate
+these symlinks.
+
 
 I also named this repository `.config` instead of `dotfiles` like literally everyone else because this name allows
 me to just `git clone` onto my home directory and basically call it a day.
+
 
 # Cool software I'm using
 `i3-gaps`, `polybar`, `compton`, `kitty`, `zsh` (with `oh-my-zsh`), `rofi`, `pcmanfm`, `ncmpcpp`, `mpd` and `neofetch`.
