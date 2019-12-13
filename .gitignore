@@ -1,19 +1,33 @@
+##
+## Files
+##
 *.list
 kritarc
 kritadisplayrc
 karboncalligraphyrc
+QtProject.conf
+
+gtk-2.0/gtkfilechooser.ini
+
+
+##
+## Folders
+##
 
 systemd/
 dconf/
 libfm/
 pulse/
-Postman/
+
 vlc/
 VirtualBox/
-Code\ -\ OSS/
 libreoffice/
-Android\ Open\ Source\ Project/
-FreeCAD/
-blender/
 
-QtProject.conf
+Code\ -\ OSS/
+Android\ Open\ Source\ Project/
+Postman/
+
+FreeCAD/
+kicad/
+blender/
+inkscape/
