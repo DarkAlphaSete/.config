@@ -39,6 +39,7 @@ bindsym $mod+Shift+l exec "killall -q picom"
 exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 
 # Take a screenshot of the selected area using scrot
+# Too bad scrot absolutely hates working, even when run manually without shortcuts...
 #bindsym $mod+p exec --no-startup-id $XDG_CONFIG_HOME/screenshot.sh why_did_I_have_to_write_a_script_for_this
 
 
