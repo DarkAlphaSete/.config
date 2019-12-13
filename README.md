@@ -8,10 +8,10 @@ The files `.zshrc` and `.xinitrc` are in this `.config` folder, because symlinke
 I also named this repository `.config` instead of `dotfiles` like literally everyone else because this name allows
 me to just `git clone` onto my home directory and basically call it a day.
 
-# Programs
+# Cool software I'm using
 `i3-gaps`, `polybar`, `compton`, `kitty`, `zsh` (with `oh-my-zsh`), `rofi`, `pcmanfm`, `ncmpcpp`, `mpd` and `neofetch`.
 
-Also, `blender` and `krita`.
 
 # Credits
-...go to the example files. No other files were used here; I just edited the default ones.
+...go to the example files of each respective program. No other files were used here; I just edited the default ones
+(with some online help, of course).
