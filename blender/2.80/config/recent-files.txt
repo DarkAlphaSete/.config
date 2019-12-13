@@ -1,4 +1,0 @@
-/home/saturn/Documents/Art/3D/Tutorials/BlenderGuru/Donut.blend
-/home/saturn/Documents/Art/3D/Tutorials/BlenderGuru/Donut-PreIcingEdits.blend
-/home/saturn/Documents/Art/3D/Tutorials/BlenderGuru/Donut-PreSculpting.blend
-/home/saturn/Documents/Art/3D/Donut.blend

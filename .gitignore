@@ -1,4 +1,8 @@
 *.list
+kritarc
+kritadisplayrc
+karboncalligraphyrc
+
 systemd/
 dconf/
 libfm/
@@ -9,3 +13,7 @@ VirtualBox/
 Code\ -\ OSS/
 libreoffice/
 Android\ Open\ Source\ Project/
+FreeCAD/
+blender/
+
+QtProject.conf
