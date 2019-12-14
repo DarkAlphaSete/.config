@@ -1,9 +1,9 @@
 # .config
 Looks nice, but isn't mindblowing or anything.
 
-All these files go to $XDG_CONFIG_HOME (for me, it's $HOME/.config).
+All these files go to $XDG_CONFIG_HOME (personally, it's $HOME/.config).
 
-I also symlinked some files out of the $HOME directory to here to keep all configs in a single place to make sure everything is tide.
+I also symlinked some files out of the $HOME directory to here to keep all configs in a single place, thus making keeping everythingtidy. The `symlinks.sh` is a small script I wrote to do this for me automatically.
 
 
 I also named this repository `.config` instead of `dotfiles` like literally everyone else because this name allows me to just `git clone` onto my home directory and basically call it a day.
