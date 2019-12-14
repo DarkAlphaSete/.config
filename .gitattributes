@@ -1,0 +1,3 @@
+# Make Github consider everything a Shell file
+# (it considers that this repository is all Python otherwise)
+*.* linguist-language=Shell
