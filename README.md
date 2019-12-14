@@ -10,7 +10,7 @@ I also named this repository `.config` instead of `dotfiles` like literally ever
 
 
 # Cool software I'm using
-`i3-gaps`, `polybar`, `picom`, `kitty`, `ranger`, `zsh` (with `oh-my-zsh`), `rofi`,`pcmanfm`, `ncmpcpp`, `mpd`, `neofetch` and `pywal`.
+`i3-gaps`, `polybar`, `picom`, `kitty`, `ranger`, `zsh` (with `oh-my-zsh`), `rofi`,`pcmanfm`, `ncmpcpp`, `mpd`, `neofetch`, `xpad` and `pywal`.
 
 
 # Credits

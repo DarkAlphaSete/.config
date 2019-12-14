@@ -28,6 +28,9 @@ set $refresh_i3status killall -SIGUSR1 i3status
 ## Startup
 ####
 
+# Sticky notes app (xpad)
+exec --no-startup-id xpad
+
 # Compositor (picom)
 exec_always --no-startup-id "killall -q picom ; picom"
 
@@ -277,6 +280,9 @@ floating_modifier $mod
 
 # Rofi
 bindsym $mod+d exec "rofi -show run"
+
+# Create a new note in xpad
+bindsym $mod+n exec "xpad -n"
 
 # Start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
