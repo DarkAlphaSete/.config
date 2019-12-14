@@ -104,7 +104,6 @@ export LANG=en_GB.UTF-8
 alias fuck='sudo $(fc -ln -1)'
 
 alias less="/usr/bin/less -R"
-alias view="/usr/bin/vim -R -"
 
 
 

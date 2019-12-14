@@ -1,6 +1,31 @@
-##
+###
+## Folders
+###
+
+systemd/
+dconf/
+libfm/
+pulse/
+
+wal/
+
+vlc/
+VirtualBox/
+libreoffice/
+
+Code\ -\ OSS/*
+Android\ Open\ Source\ Project/
+Postman/
+
+FreeCAD/
+kicad/
+blender/
+inkscape/
+
+
+###
 ## Files
-##
+###
 *.list
 kritarc
 kritadisplayrc
@@ -9,25 +34,7 @@ QtProject.conf
 
 gtk-2.0/gtkfilechooser.ini
 
-
-##
-## Folders
-##
-
-systemd/
-dconf/
-libfm/
-pulse/
-
-vlc/
-VirtualBox/
-libreoffice/
-
-Code\ -\ OSS/
-Android\ Open\ Source\ Project/
-Postman/
-
-FreeCAD/
-kicad/
-blender/
-inkscape/
+# This is a complete monstrosity of a mess, but it works
+!/Code\ -\ OSS/User/
+/Code\ -\ OSS/User/*
+!/Code\ -\ OSS/User/settings.json
