@@ -327,7 +327,7 @@ type = internal/date
 interval = 1
 
 date =
-date-alt = %d/%m/%Y
+date-alt =  %d/%m/%Y
 
 time = %H  %M
 time-alt =  %H:%M:%S

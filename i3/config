@@ -28,9 +28,6 @@ set $refresh_i3status killall -SIGUSR1 i3status
 ## Startup
 ####
 
-# Sticky notes app (xpad)
-exec --no-startup-id xpad
-
 # Compositor (picom)
 exec_always --no-startup-id "killall -q picom ; picom"
 
@@ -38,12 +35,15 @@ exec_always --no-startup-id "killall -q picom ; picom"
 exec_always --no-startup-id "$XDG_CONFIG_HOME/polybar/launch.sh"
 
 # This script picks a random wallpaper, sets it and makes pywal recalculate the theme colors
-exec_always --no-startup-id sh "$XDG_CONFIG_HOME/pick_random_wallpaper.sh"
+exec_always --no-startup-id sh "$XDG_CONFIG_HOME/set_random_wallpaper.sh"
 
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+# Automatically lock the screen after some time of inactivity using xautolock
+exec --no-startup-id xautolock -time 5 -locker "i3lock --color ffffff"
 
 # Removal storage automounter (udiskie)
 exec --no-startup-id udiskie --use-udisks2 --smart-tray
@@ -58,6 +58,9 @@ exec --no-startup-id nm-applet
 
 # Simple page to use as an homepage and new tab for the browser
 #python3 -m http.server --directory "$HOME/Documents/Programming/WebPages/simple-clock" 8001
+
+# Sticky notes app (xpad)
+exec --no-startup-id xpad
 
 
 
