@@ -62,14 +62,13 @@ font-1 = "FontAwesome:style=Regular:pixelsize=12;2"
 ;font-3 = siji:pixelsize=10;1
 
 modules-left = i3
-modules-center = mpd date
+modules-center = date mpd time
 modules-right = hdd-usage pulseaudio memory cpu temperature battery powermenu
 
 tray-position = right
 tray-padding = 0
 tray-background = ${colors.background}
 ;tray-background = #0063ff
-tray-transparent = true
 
 ;wm-restack = bspwm
 wm-restack = i3
@@ -267,23 +266,35 @@ format-disconnected =
 
 
 
-[module/date]
+[module/time]
 type = internal/date
 interval = 1
 
 date =
-date-alt =  %d/%m/%Y
+date-alt =
 
-time = " %H:%M:%S "
-time-alt =  %H:%M:%S
+time = " %H:%M:%S"
+time-alt = " %H:%M:%S"
 
-;format-prefix-foreground = ${colors.primary}
 ;format-underline = #0a6cf5
 format-underline = ${colors.primary}
 
-label = %date% %time%
+label = %time%
 
 
+[module/date]
+type = internal/date
+interval = 1
+
+date =  %d %b %Y
+date-alt =  %d/%m/%Y
+
+time =
+time-alt =
+
+format-underline = ${colors.primary}
+
+label = %date%
 
 
 
