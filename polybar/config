@@ -284,10 +284,10 @@ label = %time%
 
 [module/date]
 type = internal/date
-interval = 1
+interval = 300
 
 date =  %d %b %Y
-date-alt =  %d/%m/%Y
+date-alt =  %a, %d %b %Y
 
 time =
 time-alt =

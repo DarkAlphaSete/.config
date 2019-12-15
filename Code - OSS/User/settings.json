@@ -8,20 +8,18 @@
     "editor.wordWrap": "wordWrapColumn",
     "editor.fontLigatures": true,
     "editor.fontSize": 16,
-    "arduino.defaultBaudRate": 9600,
-    "arduino.enableUSBDetection": true,
     "C_Cpp.default.includePath": [
         "/home/saturn/Arduino/libraries",
+        "/usr/local/lib",
+        "/usr/local/lib64",
+        "/usr/lib",
+        "/usr/lib64",
         "{workspaceRoot}"
     ],
     "C_Cpp.default.cppStandard": "c++11",
     "C_Cpp.default.cStandard": "c11",
     "C_Cpp.intelliSenseEngine": "Tag Parser",
     "vsicons.dontShowNewVersionMessage": true,
-    "files.associations": {
-        "zshrc": "shellscript",
-        "config": "shellscript"
-    },
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 0,
     "workbench.colorTheme": "Wal"
 }

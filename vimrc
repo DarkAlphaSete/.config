@@ -12,3 +12,4 @@ call plug#end()
 colorscheme wal
 
 set number
+set colorcolumn=80
