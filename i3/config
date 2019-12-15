@@ -20,22 +20,25 @@ set $ws10 "10"
 # Refresh i3 status
 set $refresh_i3status killall -SIGUSR1 i3status
 
+# This script picks a random wallpaper, sets it and makes pywal recalculate the theme colors
+set $set_random_wallpaper "sh $XDG_CONFIG_HOME/set_random_wallpaper.sh"
 
-
+# Set the compositor (to allow me to easily switch between compositors)
+set $compositor compton
 
 
 ####
 ## Startup
 ####
 
-# Compositor (picom)
-exec_always --no-startup-id "killall -q picom ; picom"
+# Compositor
+exec_always --no-startup-id "killall -q $compositor ; $compositor"
 
 # Polybar
 exec_always --no-startup-id "$XDG_CONFIG_HOME/polybar/launch.sh"
 
-# This script picks a random wallpaper, sets it and makes pywal recalculate the theme colors
-exec_always --no-startup-id sh "$XDG_CONFIG_HOME/set_random_wallpaper.sh"
+# Set a random wallpaper on start
+exec_always --no-startup-id $set_random_wallpaper
 
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
@@ -43,7 +46,7 @@ exec_always --no-startup-id sh "$XDG_CONFIG_HOME/set_random_wallpaper.sh"
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # Automatically lock the screen after some time of inactivity using xautolock
-exec --no-startup-id xautolock -time 5 -locker "i3lock --color ffffff"
+exec --no-startup-id xautolock -time 1 -locker "i3lock --color ffffff"
 
 # Removal storage automounter (udiskie)
 exec --no-startup-id udiskie --use-udisks2 --smart-tray
@@ -301,9 +304,11 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 
 # Compositor killing and respawning
-bindsym $mod+l exec "killall -q picom ; picom"
-bindsym $mod+Shift+l exec "killall -q picom"
+bindsym $mod+l exec "killall -q $compositor ; $compositor"
+bindsym $mod+Shift+l exec "killall -q $compositor"
 
+# Change the wallpaper
+bindsym $mod+Shift+p exec --no-startup-id $set_random_wallpaper
 
 ####
 ### i3-related

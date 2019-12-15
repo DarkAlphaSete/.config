@@ -52,7 +52,7 @@ COMPLETION_WAITING_DOTS="true"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -120,6 +120,7 @@ export JAVA_HOME="/usr/lib/jvm/java-11-openjdk/"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
+export DEFAULT_USER="saturn"
 
 
 ##
@@ -134,5 +135,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 # To add support for TTYs this line can be optionally added.
 source ~/.cache/wal/colors-tty.sh
 
-# Clear the console on start (agnoster enjoys showing an error every time it's opened for some reason)
+
+
+# Clear the console on start (agnoster enjoys showing an error as if the previous command errored out every time it's opened for some reason)
 clear
