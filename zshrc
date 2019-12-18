@@ -132,10 +132,9 @@ export DEFAULT_USER="saturn"
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
 (cat ~/.cache/wal/sequences &)
-# To add support for TTYs this line can be optionally added.
-source ~/.cache/wal/colors-tty.sh
 
+case $(tty) in /dev/tty[0-9]*)
+	# To add support for TTYs this line can be optionally added.
+	source ~/.cache/wal/colors-tty.sh
+esac
 
-
-# Clear the console on start (agnoster enjoys showing an error as if the previous command errored out every time it's opened for some reason)
-clear

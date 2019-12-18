@@ -35,7 +35,12 @@ set $compositor compton
 exec_always --no-startup-id "killall -q $compositor ; $compositor"
 
 # Polybar
-exec_always --no-startup-id "sh $XDG_CONFIG_HOME/polybar/sleep.sh 0.5;sh $XDG_CONFIG_HOME/polybar/launch.sh"
+# Why the for loop you ask?
+# I shall answer you with "I shall fix jank with more jank"
+# Honestly though, I have no idea why the sleeps even fix this mess...
+#exec --no-startup-id "sleep 5; for i in {1..3}; do sh $XDG_CONFIG_HOME/polybar/launch.sh; sleep 5; done"
+exec --no-startup-id "sh $XDG_CONFIG_HOME/polybar/launch.sh"
+
 
 # Set a random wallpaper on start
 exec_always --no-startup-id $set_random_wallpaper
