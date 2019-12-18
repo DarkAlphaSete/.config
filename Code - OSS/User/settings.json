@@ -4,7 +4,7 @@
     "telemetry.enableTelemetry": false,
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 25000,
-    "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback', 'FontAwesome'",
     "editor.wordWrap": "wordWrapColumn",
     "editor.fontLigatures": true,
     "editor.fontSize": 16,
