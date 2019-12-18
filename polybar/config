@@ -492,13 +492,12 @@ format = <menu>
 ;format-underline = ${colors.primary}
 format-foreground = ${colors.foreground}
 
-label-separator-background = ${colors.transparent}
-
 format-spacing = 0
 
 ;label-open = "  "
 
 menu-0-0 = ${root.devInfo-action}
+menu-0-0-foreground = ${colors.primary}
 menu-0-0-exec = "$XDG_CONFIG_HOME/polybar/dev_info_toggler.sh"
 
 
