@@ -141,7 +141,7 @@ border-color = ${colors.transparent}
 background = ${colors.transparent}
 
 width = 25%
-offset-x = 35%:2
+offset-x = 35%:3
 ;offset-y = 10%
 
 fixed-center = true
