@@ -35,7 +35,7 @@ set $compositor compton
 exec_always --no-startup-id "killall -q $compositor ; $compositor"
 
 # Polybar
-exec_always --no-startup-id "$XDG_CONFIG_HOME/polybar/launch.sh"
+exec_always --no-startup-id "sh $XDG_CONFIG_HOME/polybar/sleep.sh 0.5;sh $XDG_CONFIG_HOME/polybar/launch.sh"
 
 # Set a random wallpaper on start
 exec_always --no-startup-id $set_random_wallpaper
@@ -307,6 +307,9 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym $mod+l exec "killall -q $compositor ; $compositor"
 bindsym $mod+Shift+l exec "killall -q $compositor"
 
+# Restart the polybars
+bindsym $mod+Shift+o exec --no-startup-id "sh $XDG_CONFIG_HOME/polybar/launch.sh"
+
 # Change the wallpaper
 bindsym $mod+Shift+p exec --no-startup-id $set_random_wallpaper
 
@@ -355,7 +358,8 @@ bindsym $mod+v split v
 
 
 # Enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+# Also run a script (polybar stuff)
+bindsym $mod+f fullscreen toggle; exec --no-startup-id "$XDG_CONFIG_HOME/polybar/fullscreen.sh"
 
 
 # Change container layout (stacked, tabbed, toggle split)

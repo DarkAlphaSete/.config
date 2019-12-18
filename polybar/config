@@ -1,3 +1,4 @@
+; vim:ft=dosini
 ;==========================================================
 ;
 ;
@@ -26,20 +27,20 @@ foreground-alt = ${xrdb:color8:#555}
 primary = ${xrdb:color1:#ffb52a}
 secondary = ${xrdb:color4:#e60053}
 alert = ${xrdb:color3:#bd2c40}
+transparent = #00FFFFFF
 
 
 
 
 
-[bar/main]
+[bar/barDefaults]
 ;monitor = ${env:MONITOR:HDMI-1}
-width = 100%
+width =
 height = 3%
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0
 fixed-center = false
-
 background = ${colors.background}
 foreground = ${colors.foreground}
 
@@ -50,7 +51,7 @@ border-size = 5
 border-color = ${colors.background}
 
 padding-left = 0
-padding-right = 2
+padding-right = 0
 
 module-margin-left = 1
 module-margin-right = 1
@@ -61,50 +62,135 @@ font-1 = "FontAwesome:style=Regular:pixelsize=12;2"
 ;font-2 = unifont:fontformat=truetype:size=8:antialias=false;0
 ;font-3 = siji:pixelsize=10;1
 
-modules-left = i3
-modules-center = date mpd time
-modules-right = hdd-usage pulseaudio memory cpu temperature battery powermenu
+modules-left = 
+modules-center =
+modules-right =
 
-tray-position = right
-tray-padding = 0
-tray-background = ${colors.background}
-;tray-background = #0063ff
-
-;wm-restack = bspwm
+override-redirect = true
 wm-restack = i3
 
-;override-redirect = true
+tray-position = none
 
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
+scroll-up =
+scroll-down =
 
 ; default, pointer, ns-resize
 cursor-click = pointer
-# For some reason it shows the scroll pointer along the entire bar, so I choose to never show it
+# For some reason it shows the scroll pointer along the entire bar, so it might
+# as well never any custom cursor
 cursor-scroll = default
 
-
-
-
-
-[module/filesystem]
-type = internal/fs
-interval = 25
-
-mount-0 = /
-
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
+enable-ipc = false
 
 
 
 
 
-[module/hdd-usage]
+[bar/main]
+inherit=bar/barDefaults
+
+width = 100%
+radius = 0
+fixed-center = false
+
+modules-left = i3
+modules-center =
+modules-right = pulseaudio mpd battery powerMenu
+
+scroll-up = i3wm-wsprev
+scroll-down = i3wm-wsnext
+
+tray-position = right
+tray-background = ${colors.background}
+tray-detached = false
+tray-maxsize = 16
+tray-offset-x = 0
+tray-offset-y = 0
+tray-padding = 2
+tray-scale = 1.0
+
+override-redirect = false
+
+
+
+
+[bar/currentTime]
+inherit=bar/barDefaults
+
+bottom = true
+offset-y = 2%
+offset-x = 79%
+
+width = 22%
+
+
+border-size = 0
+radius = 10
+modules-center = date time
+
+override-redirect = true
+wm-restack = none
+
+enable-ipc = true
+
+
+[bar/devInfo]
+inherit=bar/barDefaults
+
+border-color = ${colors.transparent}
+background = ${colors.transparent}
+
+width = 25%
+offset-x = 35%:2
+;offset-y = 10%
+
+fixed-center = true
+
+modules-center = hddUsage memory devInfoTogglerMenu  cpu temperature
+
+devInfo-action = "  "
+
+; default, pointer, ns-resize
+cursor-click = pointer
+; For some reason it shows the scroll pointer along the entire bar, so I choose to never show it
+cursor-scroll = default
+
+enable-ipc = true
+
+override-redirect = true
+wm-restack = none
+
+
+
+[bar/devInfoSpawner]
+inherit=bar/barDefaults
+
+border-color = ${colors.transparent}
+background = ${colors.transparent}
+
+width = 5%
+offset-x = 45%
+;offset-y = 10%
+
+fixed-center = true
+
+modules-center = devInfoTogglerMenu
+
+devInfo-action = "  "
+
+; default, pointer, ns-resize
+cursor-click = pointer
+; For some reason it shows the scroll pointer along the entire bar, so I choose to never show it
+cursor-scroll = default
+
+enable-ipc = true
+
+override-redirect = true
+wm-restack = none
+
+
+
+[module/hddUsage]
 type = internal/fs
 interval = 60
 
@@ -127,18 +213,17 @@ type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
+enable-scroll = false
+
+format-background = ${colors.background}
 
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
 label-mode-padding = 2
-label-mode-foreground = ${colors.foreground}
-label-mode-background = ${colors.background}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-foreground = ${colors.foreground}
-label-focused-background = ${colors.background}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
@@ -148,15 +233,12 @@ label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
-label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%
-label-urgent-foreground = ${colors.background}
 label-urgent-background = ${colors.primary}
-label-urgent-underline = ${colors.background}
 label-urgent-padding = ${self.label-focused-padding}
 
 ; Separator in between workspaces
@@ -171,6 +253,8 @@ type = internal/mpd
 ;format-online = <label-song>
 format-online = <icon-prev> <icon-stop> <toggle> <icon-next>
 
+format-online-background = ${colors.background}
+
 icon-prev-foreground = ${colors.primary}
 icon-stop-foreground = ${colors.primary}
 icon-next-foreground = ${colors.primary}
@@ -183,10 +267,10 @@ icon-play = 
 icon-pause = 
 icon-next = 
 
-label-song-maxlen = 32
-label-song-ellipsis = true
+;label-song-maxlen = 32
+;label-song-ellipsis = true
 
-label-offline = mpd is offline
+label-offline =
 
 
 
@@ -196,7 +280,7 @@ label-offline = mpd is offline
 type = internal/cpu
 interval = 3
 format-label-foreground = ${colors.foreground}
-format-prefix = 
+format-prefix = " "
 format-prefix-foreground = ${colors.primary}
 ;format-underline = #f90000
 label = %percentage:3%%
@@ -218,16 +302,16 @@ label = %percentage_used:3%%
 
 
 
-[module/wlan]
+[module/wlanBandwith]
 type = internal/network
 interface = wlp3s0
 interval = 3.0
 
 format-connected = <label-connected>
 ;format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
+;format-connected-underline = #9f78e1
 ;label-connected = %{A1:nm-applet:}%essid%%{A}
-label-connected = %essid%
+label-connected =  %upspeed%  %downspeed%
 
 format-disconnected = offline
 ;format-disconnected = <label-disconnected>
@@ -235,32 +319,12 @@ format-disconnected = offline
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
-
-
-
-
-
-[module/eth]
-type = internal/network
-interface = enp5s0
-interval = 3.0
-
-format-connected-underline = #55aa55
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+;ramp-signal-0 = 
+;ramp-signal-1 = 
+;ramp-signal-2 = 
+;ramp-signal-3 = 
+;ramp-signal-4 = 
+;ramp-signal-foreground = ${colors.foreground-alt}
 
 
 
@@ -276,25 +340,31 @@ date-alt =
 time = " %H:%M:%S"
 time-alt = " %H:%M:%S"
 
+format-background = ${colors.background}
+
 ;format-underline = #0a6cf5
-format-underline = ${colors.primary}
+;format-underline = ${colors.primary}
 
 label = %time%
+
 
 
 [module/date]
 type = internal/date
 interval = 300
 
-date =  %d %b %Y
+date =  %d/%m/%Y
 date-alt =  %a, %d %b %Y
 
 time =
 time-alt =
 
-format-underline = ${colors.primary}
+format-background = ${colors.background}
+;format-underline = ${colors.primary}
 
 label = %date%
+
+
 
 
 
@@ -303,24 +373,25 @@ type = internal/pulseaudio
 
 ;format-volume = <label-volume> <bar-volume>
 format-volume = <label-volume>
-format-volume-prefix = " "
+format-volume-prefix = ""
 format-volume-prefix-foreground = ${colors.primary}
 label-volume = %percentage:3%%
-label-volume-foreground = ${colors.foreground}
+format-volume-background = ${colors.background}
 
 ;label-muted = muted
-label-muted = -
+label-muted =  ~~
 ;label-muted-foreground = #666
 label-muted-foreground = ${colors.primary}
+label-muted-background = ${colors.background}
 
-bar-volume-width = 5
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
+;bar-volume-width = 5
+;bar-volume-foreground-0 = #55aa55
+;bar-volume-foreground-1 = #55aa55
+;bar-volume-foreground-2 = #55aa55
+;bar-volume-foreground-3 = #55aa55
+;bar-volume-foreground-4 = #55aa55
+;bar-volume-foreground-5 = #f5a70a
+;bar-volume-foreground-6 = #ff5555
 ;bar-volume-foreground-0 = ${xrdb:color1:#55aa55}
 ;bar-volume-foreground-1 = ${xrdb:color1:#55aa55}
 ;bar-volume-foreground-2 = ${xrdb:color4:#55aa55}
@@ -328,14 +399,14 @@ bar-volume-foreground-6 = #ff5555
 ;bar-volume-foreground-4 = ${xrdb:color6:#55aa55}
 ;bar-volume-foreground-5 = ${xrdb:color6:#f5a70a}
 ;bar-volume-foreground-6 = ${xrdb:color8:#ff5555}
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
+;bar-volume-gradient = false
+;bar-volume-indicator = |
+;bar-volume-indicator-font = 2
+;bar-volume-fill = ─
+;bar-volume-fill-font = 2
+;bar-volume-empty = ─
+;bar-volume-empty-font = 2
+;bar-volume-empty-foreground = ${colors.foreground-alt}
 
 
 
@@ -350,18 +421,21 @@ full-at = 98
 format-charging-prefix = " "
 format-charging = <label-charging>
 format-charging-prefix-foreground = ${colors.primary}
+format-charging-background = ${colors.background}
 ;format-charging = <animation-charging> <label-charging>
 ;format-charging-underline = #ffb52a
 
 format-discharging-prefix = " "
 format-discharging = <label-discharging>
 format-discharging-prefix-foreground = ${colors.primary}
+format-discharging-background = ${colors.background}
 ;format-discharging = <animation-discharging> <label-discharging>
 ;format-discharging-underline = ${self.format-charging-underline}
 
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.primary}
+format-full-background = ${colors.background}
 ;format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 
@@ -390,11 +464,8 @@ type = internal/temperature
 thermal-zone = 0
 warn-temperature = 70
 
-;format = <label>
 format = <ramp> <label>
 ;format-underline = #f50a4d
-;format-underline = ${colors.primary}
-;format-warn = <label-warn>
 format-warn = <ramp> <label-warn>
 ;format-warn-underline = ${self.format-underline}
 
@@ -412,7 +483,29 @@ ramp-foreground = ${colors.primary}
 
 
 
-[module/powermenu]
+[module/devInfoTogglerMenu]
+type = custom/menu
+
+format = <menu>
+
+;format-overline = ${colors.primary}
+;format-underline = ${colors.primary}
+format-foreground = ${colors.foreground}
+
+label-separator-background = ${colors.transparent}
+
+format-spacing = 0
+
+;label-open = "  "
+
+menu-0-0 = ${root.devInfo-action}
+menu-0-0-exec = "$XDG_CONFIG_HOME/polybar/dev_info_toggler.sh"
+
+
+
+
+
+[module/powerMenu]
 type = custom/menu
 
 expand-right = true
@@ -423,7 +516,6 @@ label-open = "  "
 label-open-foreground = ${colors.background}
 label-open-background = ${colors.primary}
 label-close = cancel
-;label-close =  cancel
 label-close-foreground = ${colors.background}
 label-close-background = ${colors.primary}
 label-separator = |
@@ -441,35 +533,58 @@ menu-2-0 = reboot
 menu-2-0-exec = reboot
 
 
-;menu-0-0 = poweroff
-;menu-0-0-exec = menu-open-1
-;menu-0-1 = reboot
-;menu-0-1-exec = menu-open-2
 
-;menu-1-0 = poweroff
-;menu-1-0-exec = poweroff
 
-;menu-2-0 = reboot
-;menu-2-0-exec = reboot
+
+[global/wm]
+; Adjust the _NET_WM_STRUT_PARTIAL top value
+;   Used for top aligned bars
+margin-bottom = 0
+
+; Adjust the _NET_WM_STRUT_PARTIAL bottom value
+;   Used for bottom aligned bars
+margin-top = 0
 
 
 
 
 
 [settings]
-screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
-pseudo-transparency = true
+; The throttle settings lets the eventloop swallow up til X events
+; if they happen within Y millisecond after first event was received.
+; This is done to prevent flood of update event.
+;
+; For example if 5 modules emit an update event at the same time, we really
+; just care about the last one. But if we wait too long for events to swallow
+; the bar would appear sluggish so we continue if timeout
+; expires or limit is reached.
+throttle-output = 5
+throttle-output-for = 10
 
+; Time in milliseconds that the input handler will wait between processing events
+throttle-input-for = 30
 
+; Reload upon receiving XCB_RANDR_SCREEN_CHANGE_NOTIFY events
+screenchange-reload = false
 
+; Compositing operators
+; @see: https://www.cairographics.org/manual/cairo-cairo-t.html#cairo-operator-t
+compositing-background = source
+compositing-foreground = over
+compositing-overline = over
+compositing-underline = over
+compositing-border = over
 
+; Define fallback values used by all module formats
+format-foreground = ${colors.foreground}
+format-background = ${colors.transparent}
+format-underline =
+format-overline =
+format-spacing =
+format-padding =
+format-margin =
+format-offset =
 
-[global/wm]
-margin-top = 10
-margin-bottom = 5
-
-; vim:ft=dosini
+; Enables pseudo-transparency for the bar
+; If set to true the bar can be transparent without a compositor.
+pseudo-transparency = false
