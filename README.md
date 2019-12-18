@@ -15,3 +15,8 @@ I also named this repository `.config` instead of `dotfiles` like literally ever
 
 # Credits
 ...go to the example files of each respective program. No other files were used here; I just edited the default ones (on top of some online help, of course).
+
+# License
+MIT.
+Basically, it means you can do whatever the hell you want with all this as long as you credit me.
+I'm not experienced with licensing stuff, so please warn me if I can't throw licenses at config files and I'll remove it.
