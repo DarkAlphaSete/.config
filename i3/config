@@ -5,6 +5,8 @@
 # Modifier key
 set $mod Mod4
 
+set $Alt Mod1
+
 # Workspaces
 set $ws1 "1"
 set $ws2 "2"
@@ -22,6 +24,10 @@ set $refresh_i3status killall -SIGUSR1 i3status
 
 # This script picks a random wallpaper, sets it and makes pywal recalculate the theme colors
 set $set_random_wallpaper "sh $XDG_CONFIG_HOME/set_random_wallpaper.sh"
+
+# screenshot commands
+set $take_screenshot "scrot 'Screenshot-%F_%T.png' -e 'mv $f ~/Documents/Images/Screenshots/'"
+set $take_screenshot_select "scrot 'Screenshot-%F_%T.png' -e 'mv $f ~/Documents/Images/Screenshots/' -s -f"
 
 # Set the compositor (to allow me to easily switch between compositors)
 set $compositor compton
@@ -318,6 +324,11 @@ bindsym $mod+Shift+o exec --no-startup-id "sh $XDG_CONFIG_HOME/polybar/launch.sh
 # Change the wallpaper
 bindsym $mod+Shift+p exec --no-startup-id $set_random_wallpaper
 
+# Take a screenshot
+bindsym Print exec $take_screenshot
+bindsym --release $mod+Print exec $take_screenshot_select
+
+
 ####
 ### i3-related
 ####
@@ -368,9 +379,9 @@ bindsym $mod+f fullscreen toggle; exec --no-startup-id "$XDG_CONFIG_HOME/polybar
 
 
 # Change container layout (stacked, tabbed, toggle split)
-bindsym $mod+Alt+s layout stacking
-bindsym $mod+Alt+t layout tabbed
-bindsym $mod+Alt+y layout toggle split
+bindsym $mod+$Alt+s layout stacking
+bindsym $mod+$Alt+t layout tabbed
+bindsym $mod+$Alt+y layout toggle split
 
 # Toggle between tiling and floating
 bindsym $mod+Shift+space floating toggle
