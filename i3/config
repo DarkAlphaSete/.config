@@ -7,6 +7,12 @@ set $mod Mod4
 
 set $Alt Mod1
 
+# Directions
+set $left h
+set $down j
+set $up k
+set $right l
+
 # Workspaces
 set $ws1 "1"
 set $ws2 "2"
@@ -57,14 +63,14 @@ exec_always --no-startup-id $set_random_wallpaper
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # Automatically lock the screen after some time of inactivity using xautolock
-exec --no-startup-id xautolock -time 1 -locker "i3lock --color ffffff"
+exec --no-startup-id xautolock -corners -0+00 -cornerdelay 2 -secure -time 1 -locker "i3lock --color ffffff"
 
 # Removal storage automounter (udiskie)
 exec --no-startup-id udiskie --use-udisks2 --smart-tray
 
 
 # Lock the screen manually
-bindsym $mod+Shift+k exec i3lock
+bindsym $mod+Shift+i exec i3lock
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -299,7 +305,7 @@ floating_modifier $mod
 bindsym $mod+d exec "rofi -show run"
 
 # Create a new note in xpad
-bindsym $mod+n exec "xpad -n"
+bindsym $mod+n exec --no-startup-id "xpad -n"
 
 # Start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -315,14 +321,14 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 
 # Compositor killing and respawning
-bindsym $mod+l exec "killall -q $compositor ; $compositor"
-bindsym $mod+Shift+l exec "killall -q $compositor"
+bindsym $mod+$Alt+p exec "killall -q $compositor ; $compositor"
+bindsym $mod+Shift+$Alt+p exec "killall -q $compositor"
 
 # Restart the polybars
-bindsym $mod+Shift+o exec --no-startup-id "sh $XDG_CONFIG_HOME/polybar/launch.sh"
+bindsym $mod+Shift+p exec --no-startup-id "sh $XDG_CONFIG_HOME/polybar/launch.sh"
 
 # Change the wallpaper
-bindsym $mod+Shift+p exec --no-startup-id $set_random_wallpaper
+bindsym $mod+Shift+o exec --no-startup-id $set_random_wallpaper
 
 # Take a screenshot
 bindsym Print exec $take_screenshot
@@ -351,6 +357,10 @@ bindsym $mod+b scratchpad show
 # Show the scratchpad
 bindsym $mod+Shift+b move scratchpad
 
+# Alt+Tab-like functionality
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+
 
 # Modify gap sizes
 bindsym $mod+Shift+g mode "$mode_gaps"
@@ -360,23 +370,23 @@ bindsym $mod+r mode "resize"
 
 
 # Change focus between windows
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
 
 # Move the focused window
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
 
 
 # Split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+x split 
 
 # Split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+y split v
 
 
 # Enter fullscreen mode for the focused container
