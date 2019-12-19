@@ -345,6 +345,12 @@ bindsym $mod+Shift+r restart
 # Exit i3 (logs you out of your X session)
 bindsym $mod+Shift+Escape exit
 
+# Move to the scratchpad
+bindsym $mod+b scratchpad show
+
+# Show the scratchpad
+bindsym $mod+Shift+b move scratchpad
+
 
 # Modify gap sizes
 bindsym $mod+Shift+g mode "$mode_gaps"
