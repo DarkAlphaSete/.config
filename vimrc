@@ -32,7 +32,7 @@ set shell=/bin/bash
 set number
 set colorcolumn=80
 set hidden
-
+set hlsearch
 
 
 " Mappings
@@ -41,6 +41,9 @@ map \\ :YcmCompleter GetDoc <Enter>
 
 imap kl <Esc> 
 
+
+" Commands
+:command C let @/=""
 
 
 
