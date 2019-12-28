@@ -1,37 +1,56 @@
-# Whitelisting is easier than blacklisting
-*
-*/
-*/*
-*/**
+# Ignore everything
+/*
 
-# Whitelist
+# Whitelist the desired files
+
 
 !.gitignore
 !.gitattributes
 !LICENSE
 !README.md
 
+
 !calibrate_joysticks.sh
 !clicker.sh
 !efibootmgr-add_entries.sh
 !symlinks.sh
 
-!
+
 !zshrc
 !vimrc
 !xinitrc
 
+
+!gtk-3.0/
+!gtk-3.0/*
+
+
 !Code\ -\ OSS/User/settings.json
+
 
 !compton.conf
 
-!i3/*
-!polybar/*
-!kitty/*
-!wal/*
-!rofi/*
-!ncmpcpp/*
-!mpd/*
-!pcmanfm/*
-!neofetch/*
 
+!i3/
+!i3/*
+
+!polybar/
+!polybar/*
+
+!wal/
+!wal/*
+
+!rofi/
+!rofi/*
+
+!ncmpcpp/
+!ncmpcpp/*
+
+!mpd/
+!mpd/*
+
+!pcmanfm/
+!pcmanfm/*
+
+!neofetch/
+!neofetch/*
