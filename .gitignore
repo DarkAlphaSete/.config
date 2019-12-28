@@ -4,7 +4,7 @@
 # Whitelist the desired files
 
 
-!.gitignore
+!/.gitignore
 !.gitattributes
 !LICENSE
 !README.md
@@ -14,6 +14,7 @@
 !clicker.sh
 !efibootmgr-add_entries.sh
 !symlinks.sh
+!set_random_wallpaper.sh
 
 
 !zshrc
@@ -33,6 +34,9 @@
 
 !i3/
 !i3/*
+
+!kitty/
+!kitty/*
 
 !polybar/
 !polybar/*
