@@ -334,6 +334,8 @@ bindsym $mod+Shift+o exec --no-startup-id $set_random_wallpaper
 bindsym Print exec $take_screenshot
 bindsym --release $mod+Print exec $take_screenshot_select
 
+# Clicker
+bindsym $mod+$Alt+Shift+i exec --no-startup-id "sh $XDG_CONFIG_HOME/clicker.sh"
 
 ####
 ### i3-related

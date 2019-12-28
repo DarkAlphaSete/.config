@@ -1,41 +1,37 @@
-###
-## Folders
-###
+# Whitelisting is easier than blacklisting
+*
+*/
+*/*
+*/**
 
-systemd/
-dconf/
-libfm/
-pulse/
+# Whitelist
 
-wal/
-xpad/
+!.gitignore
+!.gitattributes
+!LICENSE
+!README.md
 
-vlc/
-VirtualBox/
-libreoffice/
+!calibrate_joysticks.sh
+!clicker.sh
+!efibootmgr-add_entries.sh
+!symlinks.sh
 
-Code\ -\ OSS/*
-Android\ Open\ Source\ Project/
-Postman/
+!
+!zshrc
+!vimrc
+!xinitrc
 
-FreeCAD/
-kicad/
-blender/
-inkscape/
+!Code\ -\ OSS/User/settings.json
 
+!compton.conf
 
-###
-## Files
-###
-*.list
-kritarc
-kritadisplayrc
-karboncalligraphyrc
-QtProject.conf
+!i3/*
+!polybar/*
+!kitty/*
+!wal/*
+!rofi/*
+!ncmpcpp/*
+!mpd/*
+!pcmanfm/*
+!neofetch/*
 
-gtk-2.0/gtkfilechooser.ini
-
-# This is a complete monstrosity of a mess, but it works
-!/Code\ -\ OSS/User/
-/Code\ -\ OSS/User/*
-!/Code\ -\ OSS/User/settings.json
