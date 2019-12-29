@@ -26,13 +26,16 @@ let g:rustfmt_autosave = 1
 colorscheme wal
 
 
+set nocompatible
 
-
+set encoding=utf-8
 set shell=/bin/bash
 set number
 set colorcolumn=80
 set hidden
 set hlsearch
+
+syntax enable
 
 
 " Mappings

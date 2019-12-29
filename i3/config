@@ -392,9 +392,10 @@ bindsym $mod+y split v
 
 
 # Enter fullscreen mode for the focused container
-# Also run a script (polybar stuff)
-bindsym $mod+f fullscreen toggle; exec --no-startup-id "$XDG_CONFIG_HOME/polybar/fullscreen.sh"
+bindsym $mod+f fullscreen toggle
 
+# Also run a script (polybar stuff)
+bindsym $mod+Shift+f exec --no-startup-id "$XDG_CONFIG_HOME/polybar/fullscreen.sh"
 
 # Change container layout (stacked, tabbed, toggle split)
 bindsym $mod+$Alt+s layout stacking
