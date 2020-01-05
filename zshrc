@@ -133,8 +133,3 @@ export DEFAULT_USER="saturn"
 # ( ) # Hide shell job control messages.
 (cat ~/.cache/wal/sequences &)
 
-case $(tty) in /dev/tty[0-9]*)
-	# To add support for TTYs this line can be optionally added.
-	source ~/.cache/wal/colors-tty.sh
-esac
-

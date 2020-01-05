@@ -3,8 +3,13 @@
 /usr/bin/rm $HOME/.zshrc
 /usr/bin/ln -s $XDG_CONFIG_HOME/zshrc $HOME/.zshrc
 
+/usr/bin/rm $HOME/.bashrc
+/usr/bin/ln -s $XDG_CONFIG_HOME/bashrc $HOME/.bashrc
+
+
 /usr/bin/rm $HOME/.vimrc
 /usr/bin/ln -s $XDG_CONFIG_HOME/vimrc $HOME/.vimrc
+
 
 
 /usr/bin/rm $HOME/.xinitrc
