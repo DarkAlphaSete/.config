@@ -25,11 +25,10 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-# Refresh i3 status
-set $refresh_i3status killall -SIGUSR1 i3status
-
 # This script picks a random wallpaper, sets it and makes pywal recalculate the theme colors
 set $set_random_wallpaper "sh $XDG_CONFIG_HOME/set_random_wallpaper.sh"
+# Same script can also set a pre-set wallpaper if any argument is given
+set $set_preset_wallpaper "sh $XDG_CONFIG_HOME/set_random_wallpaper.sh insert a joke here"
 
 # screenshot commands
 set $take_screenshot "scrot 'Screenshot-%F_%T.png' -e 'mv $f ~/Documents/Images/Screenshots/'"
@@ -66,7 +65,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id xautolock -time "1" -locker "i3lock --color ffffff" -corners "-0+0" -cornerdelay "2"
  
 # Removable storage automounter (udiskie)
-exec --no-startup-id udiskie --use-udisks2 --smart-tray
+exec --no-startup-id udiskie --smart-tray
 
 
 # Lock the screen manually
@@ -329,6 +328,7 @@ bindsym $mod+Shift+p exec --no-startup-id "sh $XDG_CONFIG_HOME/polybar/launch.sh
 
 # Change the wallpaper
 bindsym $mod+Shift+o exec --no-startup-id $set_random_wallpaper
+bindsym $mod+$Alt+Shift+o exec --no-startup-id $set_preset_wallpaper
 
 # Take a screenshot
 bindsym Print exec $take_screenshot
@@ -342,7 +342,7 @@ bindsym $mod+$Alt+Shift+i exec --no-startup-id "sh $XDG_CONFIG_HOME/clicker.sh"
 ####
 
 # Kill the focused window
-bindsym $mod+Shift+q kill
+bindsym --release $mod+Shift+q exec --no-startup-id xkill
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
