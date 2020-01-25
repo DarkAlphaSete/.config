@@ -342,7 +342,8 @@ bindsym $mod+$Alt+Shift+i exec --no-startup-id "sh $XDG_CONFIG_HOME/clicker.sh"
 ####
 
 # Kill the focused window
-bindsym --release $mod+Shift+q exec --no-startup-id xkill
+bindsym $mod+Shift+q kill
+bindsym --release $mod+Shift+$Alt+q exec --no-startup-id xkill
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
