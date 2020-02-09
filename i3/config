@@ -62,7 +62,7 @@ exec_always --no-startup-id $set_random_wallpaper
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # Automatically lock the screen after some time of inactivity using xautolock
-exec --no-startup-id xautolock -time "1" -locker "i3lock --color ffffff" -corners "-0+0" -cornerdelay "2"
+exec --no-startup-id xautolock -time "1" -locker "i3lock --color ffffff" -corners "-0+-" -cornerdelay "2"
  
 # Removable storage automounter (udiskie)
 exec --no-startup-id udiskie --smart-tray
