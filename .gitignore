@@ -20,6 +20,7 @@
 !zshrc
 !vimrc
 !xinitrc
+!bashrc
 
 
 !gtk-3.0/
@@ -52,6 +53,8 @@
 
 !mpd/
 !mpd/*
+mpd/database
+mpd/pid
 
 !pcmanfm/
 !pcmanfm/*

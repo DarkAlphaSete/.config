@@ -4,8 +4,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-Plug 'rust-lang/rust.vim'
-Plug 'ycm-core/YouCompleteMe'
+"Plug 'rust-lang/rust.vim'
+"Plug 'ycm-core/YouCompleteMe'
 Plug 'vim-syntastic/syntastic'
 
 Plug 'scrooloose/nerdtree'
@@ -63,4 +63,4 @@ let g:syntastic_check_on_wq = 0
 
 
 " Open NERDTree with Vim
-autocmd vimenter * NERDTree
+"autocmd vimenter * NERDTree

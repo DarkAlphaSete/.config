@@ -70,7 +70,7 @@ HIST_STAMPS="dd.yy.yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(colored-man-pages zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -118,18 +118,24 @@ export PHONE_SDCARD="/storage/5890-DE1C/"
 
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk/"
 
-export XDG_CONFIG_HOME="$HOME/.config"
+export DEFAULT_USER="planet"
 
-export DEFAULT_USER="saturn"
+export HOME="/home/$DEFAULT_USER"
+
+export XDG_CONFIG_HOME="$HOME/.config"
 
 
 ##
 ## Miscellaneous
 ##
 
+# Include plugins installed via pacman
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+
 # Pywal
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
 (cat ~/.cache/wal/sequences &)
-
