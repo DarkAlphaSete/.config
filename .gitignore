@@ -55,6 +55,7 @@
 !mpd/*
 mpd/database
 mpd/pid
+mpd/state
 
 !pcmanfm/
 !pcmanfm/*
