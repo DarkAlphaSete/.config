@@ -23,10 +23,6 @@
 !bashrc
 
 
-!gtk-3.0/
-!gtk-3.0/*
-
-
 !Code\ -\ OSS/User/settings.json
 
 
@@ -56,9 +52,6 @@
 mpd/database
 mpd/pid
 mpd/state
-
-!pcmanfm/
-!pcmanfm/*
 
 !neofetch/
 !neofetch/*
