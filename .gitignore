@@ -16,6 +16,7 @@
 !symlinks.sh
 !set_random_wallpaper.sh
 
+!youtube-dl--songs.sh
 
 !zshrc
 !vimrc
