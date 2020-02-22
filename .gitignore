@@ -54,6 +54,7 @@
 mpd/database
 mpd/pid
 mpd/state
+mpd/playlists
 
 !neofetch/
 !neofetch/*

@@ -132,6 +132,7 @@ export HOME="/home/$DEFAULT_USER"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
+export MPD_HOST="$XDG_CONFIG_HOME/mpd/socket"
 
 ##
 ## Miscellaneous

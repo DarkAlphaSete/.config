@@ -252,6 +252,9 @@ label-urgent-padding = ${self.label-focused-padding}
 
 [module/mpd]
 type = internal/mpd
+
+host = ${env:MPD_HOST:rip}
+
 ;format-online = <label-song>
 format-online = <icon-prev> <icon-stop> <toggle> <icon-next>
 
@@ -272,7 +275,7 @@ icon-next = 
 ;label-song-maxlen = 32
 ;label-song-ellipsis = true
 
-label-offline =
+format-offline =
 
 
 
