@@ -67,6 +67,10 @@ exec --no-startup-id xautolock -time "1" -locker "i3lock --color ffffff" -corner
 # Removable storage automounter (udiskie)
 exec --no-startup-id udiskie --smart-tray
 
+# Automatically hide the cursor
+exec --no-startup-id unclutter --ignore-scrolling --jitter 3 --timeout 4
+
+
 
 # Lock the screen manually
 bindsym $mod+Shift+i exec i3lock
@@ -440,4 +444,4 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 
 # Force some windows to always float
-for_window [class="PrettyLittleWoods" instance="PrettyLittleWoods"] floating enable
+for_window [class="DelicateSheep" instance="DelicateSheep"] floating enable

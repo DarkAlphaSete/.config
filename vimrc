@@ -56,11 +56,6 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
-" Autoformatter settings
-autocmd BufWrite *.hs :Autoformat
-" Don't automatically indent on save, since Vim's autoindent for Haskell is buggy
-autocmd FileType haskell let b:autoformat_autoindent=0
-
 
 " Open NERDTree with Vim
 "autocmd vimenter * NERDTree"
