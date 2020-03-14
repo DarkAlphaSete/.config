@@ -14,16 +14,16 @@ set $up k
 set $right l
 
 # Workspaces
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
+set $ws1 "1 龜"
+set $ws2 "2 "
+set $ws3 "3 "
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10"
+set $ws10 "10 "
 
 # This script picks a random wallpaper, sets it and makes pywal recalculate the theme colors
 set $set_random_wallpaper "sh $XDG_CONFIG_HOME/set_random_wallpaper.sh"
@@ -69,6 +69,19 @@ exec --no-startup-id udiskie --smart-tray
 
 # Automatically hide the cursor
 exec --no-startup-id unclutter --ignore-scrolling --jitter 3 --timeout 4
+
+# Firefox on workspace 1
+exec --no-startup-id i3-msg 'workspace $ws1; exec firefox'
+
+# Terminal on workspace 2
+exec --no-startup-id i3-msg 'workspace $ws2; exec i3-sensible-terminal'
+
+# Steam on workspace 3
+exec --no-startup-id i3-msg 'workspace $ws3; exec steam'
+
+# NCMPCPP (via a terminal) on workspace 10
+exec --no-startup-id i3-msg 'workspace $ws10; exec i3-sensible-terminal -e ncmpcpp'
+
 
 
 
@@ -303,6 +316,9 @@ floating_modifier $mod
 ##########
 
 #### Other programs
+
+# Quick Python shell (it's a pretty damn good calculator)
+bindsym $mod+Home exec "kitty -e python3"
 
 # Rofi
 bindsym $mod+d exec "rofi -show run"
