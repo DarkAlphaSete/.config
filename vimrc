@@ -4,10 +4,10 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-Plug 'Chiel92/vim-autoformat'
+"Plug 'Chiel92/vim-autoformat'
 
 
-Plug 'vim-syntastic/syntastic'
+"Plug 'vim-syntastic/syntastic'
 
 "Plug 'scrooloose/nerdtree'
 "Plug 'ycm-core/YouCompleteMe'

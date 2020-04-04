@@ -70,9 +70,6 @@ exec --no-startup-id udiskie --smart-tray
 # Automatically hide the cursor
 exec --no-startup-id unclutter --ignore-scrolling --jitter 3 --timeout 4
 
-# Firefox on workspace 1
-exec --no-startup-id i3-msg 'workspace $ws1; exec firefox'
-
 # Terminal on workspace 2
 exec --no-startup-id i3-msg 'workspace $ws2; exec i3-sensible-terminal'
 
@@ -80,7 +77,11 @@ exec --no-startup-id i3-msg 'workspace $ws2; exec i3-sensible-terminal'
 exec --no-startup-id i3-msg 'workspace $ws3; exec steam'
 
 # NCMPCPP (via a terminal) on workspace 10
-exec --no-startup-id i3-msg 'workspace $ws10; exec i3-sensible-terminal -e ncmpcpp'
+exec --no-startup-id i3-msg 'workspace $ws10; exec i3-sensible-terminal --class MusicPlayer -e ncmpcpp'
+
+# Firefox on workspace 1
+# Since the last one to run keeps the focus, I'm having this be the last
+exec --no-startup-id i3-msg 'workspace $ws1; exec firefox'
 
 
 
@@ -318,7 +319,7 @@ floating_modifier $mod
 #### Other programs
 
 # Quick Python shell (it's a pretty damn good calculator)
-bindsym $mod+Home exec "kitty -e python3"
+bindsym $mod+Home exec "i3-sensible-terminal -e python3"
 
 # Rofi
 bindsym $mod+d exec "rofi -show run"
@@ -460,4 +461,9 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 
 # Force some windows to always float
-for_window [class="DelicateSheep" instance="DelicateSheep"] floating enable
+#for_window [class="foo" instance="bar"] floating enable
+
+# Force some programs to appear on specific workspaces
+assign [class="firefox"] $ws1
+assign [class="Steam"] $ws3
+assign [class="MusicPlayer"] $ws10
