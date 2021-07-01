@@ -1,7 +1,9 @@
-# .config
-Nothing amazing but I find it comfy.
+# dotfiles
+Dotfiles of my current setup. Powered by Wayland and Pipewire!
 
-If you're curious, this repo is called `.config` instead of `dotfiles` (like everyone else does it) because it keeps `git clone`ing simple. (Shhhh, just pretend `git clone <directory>` doesn't exist for a little..)
+I'll also set `stow` and Ansible up for simple Arch reinstalls and put all their things here. Soon<sup>TM</sup>
+
+<sup>translation: once I get in the mood of.. well.. *burning* an entire day on this</sup>
 
 
 # Notable pieces of software in use
@@ -18,8 +20,10 @@ If you're curious, this repo is called `.config` instead of `dotfiles` (like eve
 
 I also use `gammastep` but its config isn't here so that I don't doxx myself, as my coordinates are in there haha.
 
+
 # Credits
 All the amazing developers that made all these nice and highly customizable programs. And whoever made their sample configurations.
+
 
 # License
 MIT
