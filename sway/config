@@ -28,11 +28,6 @@ set $ws9 "9"
 set $ws10 "10  "
 
 
-# Screenshot commands
-set $take_screenshot "scrot 'Screenshot-%F_%T.png' -e 'mv $f ~/pictures/screenshots/'"
-set $take_screenshot_select "scrot 'Screenshot-%F_%T.png' -e 'mv $f ~/pictures/screenshots/' -s -f"
-
-
 # Opacity for most programs
 set $opacity 0.85
 
@@ -224,8 +219,10 @@ bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 
 # Take a screenshot
-bindsym Print exec $take_screenshot
-bindsym --release $mod+Print exec $take_screenshot_select
+# These commands were definitely not stolen from somewhere
+# Also, I hate that I can't wrap this in quotes.. escaping the inner quotes does't like slurp for some reason
+bindsym --release Print exec grim -g "0,0 1920x1080" - | wl-copy
+bindsym --release $mod+Print exec grim -g "$(slurp -d)" - | wl-copy
 
 
 
