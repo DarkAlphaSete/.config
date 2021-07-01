@@ -1,0 +1,369 @@
+##########
+## Variables
+##
+
+# Modifier key
+set $mod Mod4
+
+set $Alt Mod1
+
+
+# Directions
+set $left h
+set $down j
+set $up k
+set $right l
+
+
+# Workspaces
+set $ws1 "1  "
+set $ws2 "2  "
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10  "
+
+
+# Screenshot commands
+set $take_screenshot "scrot 'Screenshot-%F_%T.png' -e 'mv $f ~/pictures/screenshots/'"
+set $take_screenshot_select "scrot 'Screenshot-%F_%T.png' -e 'mv $f ~/pictures/screenshots/' -s -f"
+
+
+# Opacity for most programs
+set $opacity 0.85
+
+
+# Screen locking wrapper script
+set $script-locking_wrapper "$XDG_CONFIG_HOME/sway/scripts/locking_wrapper.sh"
+
+
+##########
+## Startup
+##
+
+# Waybar
+bar {
+	swaybar_command waybar
+}
+
+# Gammastep (f.lux-like program)
+exec gammastep
+
+
+# Removable storage automounter (udiskie)
+exec udiskie --smart-tray
+
+
+# Dunst (displays notifications)
+# The killall part is necessary for... reasons? Reloading sway breaks dunst otherwise
+exec_always "killall dunst;dunst"
+
+# Automatically hide the cursor
+seat * hide_cursor 5000
+
+
+# ncmpcpp (via a terminal) on workspace 10
+#exec swaymsg 'workspace $ws10; exec $TERMINAL -e ncmpcpp'
+
+
+# Firefox on workspace 1. The last program to be run gets the focus
+exec swaymsg 'workspace $ws1; exec firefox'
+
+
+# Background
+set $wallpaper "$HOME/Pictures/Wallpapers/current"
+
+output "*" bg $wallpaper fill
+exec_always wal "-i $wallpaper"
+
+
+# Lock the screen after a while
+exec "bash $script-locking_wrapper idle"
+
+
+# Lock the screen manually
+bindsym $mod+Shift+i exec "bash $script-locking_wrapper now"
+
+
+# Simple homebrew homepage
+# python3 -m http.server --directory "$HOME/Documents/Programming/WebPages/simple-clock" 8001
+
+
+# Sticky notes program
+exec xpad
+
+
+
+##########
+## Modes
+##
+
+## Resize
+# Resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym $left       resize shrink width 10 px or 10 ppt
+        bindsym $down       resize grow height 10 px or 10 ppt
+        bindsym $up         resize shrink height 10 px or 10 ppt
+        bindsym $right      resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left        resize shrink width 10 px or 10 ppt
+        bindsym Down        resize grow height 10 px or 10 ppt
+        bindsym Up          resize shrink height 10 px or 10 ppt
+        bindsym Right       resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+
+
+##########
+## Load colors from Xresources
+##
+
+#set_from_resource $fg i3wm.color7 #f0f0f0
+#set_from_resource $bg i3wm.color1 #f0f0f0
+
+
+# class                 border  backgr. text indicator child_border
+#client.focused          $bg     $bg     $fg  $bg       $bg
+#client.focused_inactive $bg     $bg     $fg  $bg       $bg
+#client.unfocused        $bg     $bg     $fg  $bg       $bg
+#client.urgent           $bg     $bg     $fg  $bg       $bg
+#client.placeholder      $bg     $bg     $fg  $bg       $bg
+
+#client.background       $bg
+
+
+
+##########
+## Gaps
+##
+
+smart_gaps on
+
+gaps inner 12
+gaps outer 18
+
+
+
+##########
+## More configuration
+##
+
+# Disable borders
+default_border none
+default_floating_border none
+
+# Font for window titles
+font pango:Fira Code 10
+
+# Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Disable XWayland
+xwayland disable
+
+# Typematic delay and rate
+input * {
+	repeat_delay 400
+	repeat_rate 30
+}
+
+# Scroll factor
+input * {
+	scroll_factor 1
+}
+
+# Disable mouse acceleration
+input * {
+	pointer_accel 0
+}
+
+
+##########
+## Bindings
+##
+
+# Calculator (qalculate-gtk - libqalculate GUI wrapper ; qalc - libqalculate CLI)
+# Oddly specific title mostly because I want to prevent any potential title collisions or similar
+bindsym $mod+Home exec "qalculate-gtk"
+bindsym $mod+Shift+Home exec "$TERMINAL --title libqalculate_cli -e qalc"
+
+# Program runner
+bindsym $mod+d exec "wofi --show run --style $XDG_CONFIG_HOME/wofi_dracula/style.css"
+
+# Create a new note in xpad
+bindsym $mod+n exec "xpad -n"
+
+# Start a terminal
+bindsym $mod+Return exec $TERMINAL
+
+
+## Audio control using pactl
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+
+# Take a screenshot
+bindsym Print exec $take_screenshot
+bindsym --release $mod+Print exec $take_screenshot_select
+
+
+
+##########
+## WM-related bindings
+##
+
+# Kill the focused window
+bindsym $mod+Shift+q kill
+
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+
+# Exit the WM
+bindsym $mod+Shift+Escape exit
+
+
+# Move to the scratchpad
+bindsym $mod+b scratchpad show
+
+
+# Alt+Tab-like functionality
+bindsym $mod+Tab workspace back_and_forth
+
+
+# Modify gap sizes
+#bindsym $mod+Shift+g mode "$mode_gaps"
+
+
+# Resize the focused window
+bindsym $mod+r mode "resize"
+
+
+# Change focus between windows
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+
+# Move the focused window
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+
+# Split in horizontal orientation
+bindsym $mod+x split 
+
+
+# Split in vertical orientation
+bindsym $mod+y split v
+
+
+# Enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+
+# Change container layout (stacked, tabbed, toggle split)
+bindsym $mod+$Alt+s layout stacking
+bindsym $mod+$Alt+t layout tabbed
+bindsym $mod+$Alt+y layout toggle split
+
+
+# Toggle between tiling and floating
+bindsym $mod+Shift+Space floating toggle
+
+
+# Change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+
+# Focus the parent container
+bindsym $mod+a focus parent
+
+
+# Switch to a specific workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+
+# Move focused container to specific workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+
+
+##########
+## Miscellaneous
+##
+
+# Force some windows to always float
+#for_window [class="foo" instance="bar" app_id="foobar"] floating enable
+
+for_window [app_id="qalculate-gtk"] {
+	floating enable
+	sticky enable
+	resize set 800 600
+}
+for_window [title="libqalculate_cli"] {
+	floating enable
+	sticky enable
+	resize set 500 300
+}
+
+for_window [app_id="xpad"] {
+	floating enable
+	sticky enable
+}
+
+
+# Reduce the opacity of all programs, except for Firefox
+for_window [app_id="^(?!firefox).*$"] {
+	opacity $opacity
+}
+
+
+# Make the Firefox sharing indicator float
+for_window [title="Firefox\ —\ Sharing\ Indicator$"] {
+	floating enable
+	#sticky enable
+}

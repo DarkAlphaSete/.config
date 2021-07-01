@@ -1,0 +1,6 @@
+[submodule "wofi_dracula"]
+	path = wofi_dracula
+	url = https://github.com/dracula/wofi
+[submodule "kitty/kitty-themes"]
+	path = kitty/kitty-themes
+	url = https://github.com/dexpota/kitty-themes
