@@ -25,7 +25,6 @@ fi
 
 
 # Aliases
-alias cat="bat"
 alias vimpager="/usr/share/vim/vim82/macros/less.sh"
 
 

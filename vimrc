@@ -12,10 +12,12 @@ Plug 'rust-lang/rust.vim'
 Plug 'raimondi/delimitMate'
 Plug 'preservim/tagbar'
 
-Plug 'junegunn/goyo.vim'
+"Plug 'junegunn/goyo.vim'
 
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+
+Plug 'chriskempson/base16-vim'
 
 call plug#end()
 
@@ -23,6 +25,11 @@ call plug#end()
 "
 " vim
 "
+
+colorscheme base16-default-dark
+let base16colorspace=256
+set t_Co=16
+
 
 " Just to be sure. Thanks StackOverflow!
 if !exists("g:syntax_on")
@@ -33,7 +40,7 @@ filetype plugin on
 
 " Necessary because kitty does not support 'background color erase' (@ FAQ)
 let &t_ut=''
-set guioptions='' " In case I ever do decide to use a GUI
+set guioptions='' " To make sure everything stays the same should I ever use gvim instead
 set mouse=a
 set belloff=all
 
@@ -54,20 +61,29 @@ set incsearch
 set autoindent
 set noexpandtab
 set tabstop=4
+set shiftwidth=4
 
 
 "
 " mappings
 "
+imap <C-Return> <CR><CR><C-o>k<Tab>
+
+
 nmap <Leader>d :YcmDiags<Return>
 
 nmap <F3> :Lex<Return>
 nmap <F8> :TagbarToggle<Return>
 nmap <F11> :Goyo<Return>
 
+
+autocmd TerminalOpen * setlocal nonumber
+
 " While just ':make run' does work, it removes all colours from cargo's output
 " ':!<cmd>' and ':terminal <cmd>' (':Crun') keeps them, however.
-au BufNewFile,BufRead *.rs,Cargo.toml,Cargo.lock nmap <F5> :Crun<Return>
+autocmd BufNewFile,BufRead *.rs,Cargo.toml,Cargo.lock nmap <F5> :Crun<Return>
+
+
 
 
 "
@@ -87,14 +103,19 @@ let g:rustfmt_autosave=1
 
 
 " vim-airline
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts=1
 let g:airline_theme='powerlineish'
 
 
 " YouCompleteMe 
 let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_key_detailed_diagnostics = ''
+let g:ycm_key_detailed_diagnostics=''
 
 
 " vim-gitgutter
 highlight SignColumn guibg=NONE ctermbg=NONE
+
+
+" delimitMate
+let delimitMate_expand_cr=1
+let delimitMate_balance_matchpairs=1

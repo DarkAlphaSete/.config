@@ -1,6 +1,9 @@
 [submodule "wofi_dracula"]
 	path = wofi_dracula
 	url = https://github.com/dracula/wofi
-[submodule "kitty/kitty-themes"]
-	path = kitty/kitty-themes
-	url = https://github.com/dexpota/kitty-themes
+[submodule "kitty/base16-kitty"]
+	path = kitty/base16-kitty
+	url = https://github.com/kdrag0n/base16-kitty.git
+[submodule "sway/base16-sway"]
+	path = sway/base16-sway
+	url = https://github.com/rkubosz/base16-sway
